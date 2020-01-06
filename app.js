@@ -1,10 +1,17 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
 
 const app = express(); // Initializing the express app by express function
 
+// Handlebars middleware
+app.engine('handlebars', exphbs({ 
+    defaultLayout: 'main'
+ }));
+app.set('view engine', 'handlebars');
+
 // Index route
 app.get('/', (req, res) => {
-    res.send('INDEX')
+    res.render('index')
 })
 
 // About route

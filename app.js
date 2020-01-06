@@ -11,13 +11,14 @@ app.set('view engine', 'handlebars');
 
 // Index route
 app.get('/', (req, res) => {
-    res.render('index')
-})
+    res.render('index');
+});
 
 // About route
 app.get('/about', (req, res) => {
-    res.send('ABOUT')
-})
+    // res.send('ABOUT');
+    res.render('about');
+});
 
 const port = 5000;
 

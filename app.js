@@ -21,6 +21,10 @@ mongoose.connect('mongodb://localhost/ideas-dev', {
     })
     .catch(err => console.log(err));
 
+// Load Idea Model
+require('./models/Idea');
+const idea = mongoose.model('ideas');
+
 // Handlebars middleware
 app.engine('handlebars', exphbs({
     defaultLayout: 'main'

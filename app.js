@@ -1,7 +1,7 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
-
+const bodyParser = require('body-parser');
 const app = express(); // Initializing the express app by express function
 
 /*
@@ -31,6 +31,11 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
+// Body parser middleware
+// Body parser in this case allows us to access whatever is submitted through the Idea form
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 // Index route
 app.get('/', (req, res) => {
     const title = 'Welcome'
@@ -47,7 +52,34 @@ app.get('/about', (req, res) => {
 
 // Add Idea form
 app.get('/ideas/add', (req, res) => {
-    res.render('ideas/add')
+    res.render('ideas/add');
+})
+
+// Process form
+app.post('/ideas', (req, res) => {
+    // Since in HTML form we are using post method
+    console.log(req.body);
+
+    // Form validation
+    let errors = [];
+    if (!req.body.title) {
+        errors.push({ text: 'Please add a title' })
+    }
+
+    if (!req.body.details) {
+        errors.push({ text: 'Please add some details' })
+    }
+
+    if (errors.length > 0) {
+        res.render('ideas/add', {
+            errors: errors,
+            title: req.body.title,
+            details: req.body.details
+        });
+    } else {
+        console.log('Sumbmitted successfully');
+        res.send('Idea submitted');
+    }
 })
 
 const port = 5000;

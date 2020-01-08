@@ -8,6 +8,10 @@ const app = express(); // Initializing the express app by express function
 After installing MongoDB, setup MongoDB by using:
 $ mongod --directoryperdb --dbpath /path/to/db
 Create directory as data/db for storing
+
+In another terminal
+$ mongo 
+> show dbs
 */
 
 // Connect to mongoose
@@ -77,8 +81,15 @@ app.post('/ideas', (req, res) => {
             details: req.body.details
         });
     } else {
-        console.log('Sumbmitted successfully');
-        res.send('Idea submitted');
+        const newUser = {
+            title: req.body.title,
+            details: req.body.details
+        }
+        new Idea(newUser)
+            .save()
+            .then(idea => {
+                res.redirect('/ideas')
+            })
     }
 })
 

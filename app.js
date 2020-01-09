@@ -39,7 +39,7 @@ app.set('view engine', 'handlebars');
 
 // Body parser middleware
 // Body parser in this case allows us to access whatever is submitted through the Idea form
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Index route

@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const app = express(); // Initializing the express app by express function
 
 /*
+Installing mongodb 
+
 After installing MongoDB, setup MongoDB by using:
 $ mongod --directoryperdb --dbpath /path/to/db
 Create directory as data/db for storing
@@ -27,7 +29,7 @@ mongoose.connect('mongodb://localhost/ideas-dev', {
 
 // Load Idea Model
 require('./models/Idea');
-const idea = mongoose.model('ideas');
+const Idea = mongoose.model('ideas');
 
 // Handlebars middleware
 app.engine('handlebars', exphbs({

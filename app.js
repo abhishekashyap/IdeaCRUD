@@ -61,8 +61,6 @@ app.get('/ideas/add', (req, res) => {
     res.render('ideas/add');
 })
 
-
-// Data going into db but not collection, fix required
 // Process form
 app.post('/ideas', (req, res) => {
     // Since in HTML form we are using post method

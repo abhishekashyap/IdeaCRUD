@@ -68,6 +68,19 @@ app.get('/ideas',(req, res) => {
             });
         })
 })
+
+// Edit ideas
+app.get('/ideas/edit/:id', (req, res) => {
+    // :id acts as a placeholder, for the id of the idea from the DB
+    Idea.findOne({
+        _id: req.params.id
+    })
+    .then(idea => {
+        res.render('ideas/edit', {
+            idea: idea
+        })
+    })
+})
  
 // Add Idea form
 app.get('/ideas/add', (req, res) => {

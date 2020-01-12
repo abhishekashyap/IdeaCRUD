@@ -1,6 +1,8 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const methodOverride = require('method-override')
+const flash = require('connect-flash');
+const session = require('express-session');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express(); // Initializing the express app by express function
@@ -45,6 +47,23 @@ app.use(bodyParser.json());
 
 // Method override middleware
 app.use(methodOverride('_method'));
+
+// Express session middleware
+app.use(session({
+    secret: 'secret', //This is the secret used to sign the session ID cookie. This can be either a string for a single secret, or an array of multiple secrets. If an array of secrets is provided, only the first element will be used to sign the session ID cookie, while all the elements will be considered when verifying the signature in req
+    resave: true,
+    saveUninitialized: true
+}));
+
+app.use(flash());
+
+// Global variables
+app.use(function (req, res, next) {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    next(); // Implies we wanna call the next piece of middleware
+});
 
 // Index route
 app.get('/', (req, res) => {
@@ -148,8 +167,8 @@ app.delete('/ideas/:id', (req, res) => {
     .then(() => {
         console.log('Deleted entry');
         res.redirect('/ideas');
-    })
-})
+    });
+});
 
 const port = 5000;
 

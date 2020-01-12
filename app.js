@@ -139,6 +139,7 @@ app.post('/ideas', (req, res) => {
         new Idea(newUser)
             .save()
             .then(idea => {
+                req.flash('success_msg', 'Idea added')
                 res.redirect('/ideas')
             })
     }
@@ -156,7 +157,8 @@ app.put('/ideas/:id', (req, res) => {
 
             idea.save()
                 .then(idea => {
-                    res.redirect('/ideas')
+                    req.flash('success_msg', 'Idea updated');
+                    res.redirect('/ideas');
                 })
         })
 });
@@ -166,6 +168,7 @@ app.delete('/ideas/:id', (req, res) => {
     Idea.deleteOne({_id: req.params.id})
     .then(() => {
         console.log('Deleted entry');
+        req.flash('success_msg', 'Idea removed');
         res.redirect('/ideas');
     });
 });

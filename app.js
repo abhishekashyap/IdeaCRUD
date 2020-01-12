@@ -9,7 +9,7 @@ const app = express(); // Initializing the express app by express function
 
 // Load routes
 const ideas = require('./routes/ideas');
-
+const users = require('./routes/users');
 /*
 Installing mongodb 
 
@@ -80,6 +80,9 @@ app.get('/about', (req, res) => {
 
 // Ideas routes
 app.use('/ideas', ideas);
+
+// User routes
+app.use('/users', users);
 
 const port = 5000;
 

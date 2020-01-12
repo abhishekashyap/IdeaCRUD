@@ -3,6 +3,10 @@
     <h4>{{ title }}</h4>
     <p>{{ details }}</p>
     <a class="btn btn-dark btn-block mb-2" href="/ideas/edit/{{id}}">Edit</a>
+    <form action="/ideas/{{id}}?_method=DELETE" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" class="btn btn-danger btn-block mb-2" value="Delete">
+    </form>
 </div>
 
 {{else}}

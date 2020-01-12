@@ -73,7 +73,7 @@ app.get('/ideas', (req, res) => {
         })
 })
 
-// Edit ideas
+// Get ideas for edit
 app.get('/ideas/edit/:id', (req, res) => {
     // :id acts as a placeholder, for the id of the idea from the DB
     Idea.findOne({
@@ -125,6 +125,7 @@ app.post('/ideas', (req, res) => {
     }
 });
 
+// Edit idea and update DB
 app.put('/ideas/:id', (req, res) => {
     Idea.findOne({
         _id: req.params.id
@@ -139,7 +140,15 @@ app.put('/ideas/:id', (req, res) => {
                     res.redirect('/ideas')
                 })
         })
+});
 
+// Delete Idea
+app.delete('/ideas/:id', (req, res) => {
+    Idea.deleteOne({_id: req.params.id})
+    .then(() => {
+        console.log('Deleted entry');
+        res.redirect('/ideas');
+    })
 })
 
 const port = 5000;

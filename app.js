@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const exphbs = require('express-handlebars');
 const methodOverride = require('method-override')
 const flash = require('connect-flash');
@@ -43,6 +44,8 @@ app.set('view engine', 'handlebars');
 // Body parser in this case allows us to access whatever is submitted through the Idea form
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// Static
 
 // Method override middleware
 app.use(methodOverride('_method'));

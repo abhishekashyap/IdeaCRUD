@@ -2,18 +2,18 @@
     <div class="col-md-6 mx-auto">
         <div class="card card-body">
             <h3 class="text-center">Sign Up</h3>
-            <form action="">
+            <form action="/users/signup" method="POST">
                 <div class="form-control mb-2">
                     <label for="name">
                         Name
                     </label>
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="name" class="form-control" value="{{name}}">
                 </div>
                 <div class="form-control mb-2">
                     <label for="email">
                         Email
                     </label>
-                    <input type="email" name="email" class="form-control">
+                    <input type="email" name="email" class="form-control" value="{{email}}">
                 </div>
                 <div class="form-control mb-2">
                     <label for="password">Password</label>
@@ -23,7 +23,7 @@
                     <label for="password2">Confirm password</label>
                     <input type="password" name="password2" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-primary" class="form-control">Sign-in</button>
+                <button type="submit" class="btn btn-primary" class="form-control">Sign-up</button>
             </form>
         </div>
     </div>

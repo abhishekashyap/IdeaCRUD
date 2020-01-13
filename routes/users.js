@@ -21,11 +21,11 @@ router.post('/signup', (req, res) => {
     let errors = [];
 
     if (req.body.password != req.body.password2) {
-        errors.push({text: 'Passwords do not match'});
+        errors.push({ text: 'Passwords do not match' });
     }
 
-    if(req.body.password.length < 8) {
-        errors.push({text: 'Password should be atleast 8 characters long'});
+    if (req.body.password.length < 8) {
+        errors.push({ text: 'Password should be atleast 8 characters long' });
     }
 
     if (errors.length > 0) {
@@ -36,28 +36,38 @@ router.post('/signup', (req, res) => {
             email: req.body.email,
         })
     } else {
-        const newUser = new User({
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password
-        });
-        bcrypt.genSalt(10, (err, salt) => {
-            bcrypt.hash(newUser.password, salt, (err, hash) => {
-                if (err) throw err;
-                newUser.password = hash;
-                newUser.save()
-                .then(user => {
-                    req.flash('success_msg', 'You are now registered and can login');
-                    res.redirect('/users/login');
-                })
-                .catch(err => {
-                    console.log(err);
-                    return;
-                })
-            })
+        User.findOne({
+            email: req.body.email
         })
+            .then(user => {
+                if (user) {
+                    res.flash('error_msg', 'User with this email already exists, login instead');
+                    res.redirect('/users/signin');
+                } else {
+                    const newUser = new User({
+                        name: req.body.name,
+                        email: req.body.email,
+                        password: req.body.password
+                    });
+                    bcrypt.genSalt(10, (err, salt) => {
+                        // Hashing password
+                        bcrypt.hash(newUser.password, salt, (err, hash) => {
+                            if (err) throw err;
+                            newUser.password = hash;
+                            newUser.save()
+                                .then(user => {
+                                    req.flash('success_msg', 'You are now registered and can login');
+                                    res.redirect('/users/login');
+                                })
+                                .catch(err => {
+                                    console.log(err);
+                                    return;
+                                })
+                        });
+                    });
+                }
+            });
     }
-
 });
 
 module.exports = router;

@@ -41,8 +41,8 @@ router.post('/signup', (req, res) => {
         })
             .then(user => {
                 if (user) {
-                    res.flash('error_msg', 'User with this email already exists, login instead');
-                    res.redirect('/users/signin');
+                    req.flash('error_msg', 'User with this email already exists, login instead');
+                    res.redirect('/users/login');
                 } else {
                     const newUser = new User({
                         name: req.body.name,

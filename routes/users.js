@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs'); // For hashing passwords
-//const passport = require('passport');
+const passport = require('passport');
 
 const router = express.Router();
 
@@ -11,6 +11,14 @@ const User = mongoose.model('users');
 
 router.get('/login', (req, res) => {
     res.render('users/login');
+});
+
+router.post('/login', (req, res, next) => {
+    passport.authenticate('local', {
+        successRedirect: '/ideas',
+        failureRedirect: '/users/login',
+        failureFlash: true,
+    })(req, res, next); // IIFE 
 });
 
 router.get('/signup', (req, res) => {

@@ -1,17 +1,25 @@
 {{#if success_msg}}
-<div class="alert alert-success alert-dismissible fade show" role="alert">
+<div class="notification is-primary">
+    <button class="delete"></button>
     {{success_msg}}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
 </div>
 {{/if}}
 
 {{#if error_msg}}
-<div class="alert alert-success alert-dismissible fade show" role="alert">
+<div class="notification is-danger">
+    <button class="delete"></button>
     {{error_msg}}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
 </div>
 {{/if}}
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+            $notification = $delete.parentNode;
+
+            $delete.addEventListener('click', () => {
+                $notification.parentNode.removeChild($notification);
+            });
+        });
+    });
+</script>

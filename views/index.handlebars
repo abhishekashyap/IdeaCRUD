@@ -1,6 +1,16 @@
-<div class="jumbotron text-center">
-    <h1 class="display-4">{{ title }}</h1>
-    <p class="lead">Create, read, update and delete your ideas</p>
-    <a href="/ideas/add" class="btn btn-dark btn-lg">Add idea</a>
-    <a href="/ideas" class="btn btn-dark btn-lg">View ideas</a>
-</div>
+<section class="hero is-link is-fullheight-with-navbar">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                {{title}}
+            </h1>
+            <h2 class="subtitle">
+                Create, read, update and delete your ideas
+            </h2>
+        </div>
+        <div class="container">
+            <button class="button is-light"><a href="/ideas/add">Add idea</a></button>
+            <button class="button is-light"><a href="/ideas">View Ideas</a></button>
+        </div>
+    </div>
+</section>

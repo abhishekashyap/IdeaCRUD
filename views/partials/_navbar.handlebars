@@ -22,7 +22,8 @@
             <a href="/about" class="navbar-item">
                 About
             </a>
-
+        </div>
+        <div class="navbar-end">
             {{#if user}}
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
@@ -42,15 +43,16 @@
                     </a>
                 </div>
             </div>
-        </div>
-
-        <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
                     <a href="/users/logout" class="button is-danger">
-                        <strong>Sign up</strong>
+                        <strong>Logout</strong>
                     </a>
-                    {{else}}
+                </div>
+            </div>
+            {{else}}
+            <div class="navbar-item">
+                <div class="buttons">
                     <a href="/users/signup" class="button is-primary">
                         <strong>Sign up</strong>
                     </a>

@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const {ensureAuthenticated} = require('../helpers/auth'); // Using destructuring;
 
 const router = express.Router();
 
@@ -8,7 +9,7 @@ require('../models/Idea');
 const Idea = mongoose.model('ideas');
 
 // Ideas index route 
-router.get('/', (req, res) => {
+router.get('/', ensureAuthenticated, (req, res) => {
     Idea.find({})
         .sort({
             date: 'desc'
@@ -21,7 +22,7 @@ router.get('/', (req, res) => {
 })
 
 // Get ideas for edit
-router.get('/edit/:id', (req, res) => {
+router.get('/edit/:id', ensureAuthenticated, (req, res) => {
     // :id acts as a placeholder, for the id of the idea from the DB
     Idea.findOne({
         _id: req.params.id
@@ -34,12 +35,12 @@ router.get('/edit/:id', (req, res) => {
 })
 
 // Add Idea form
-router.get('/add', (req, res) => {
+router.get('/add', ensureAuthenticated, (req, res) => {
     res.render('ideas/add');
 })
 
 // Process form
-router.post('', (req, res) => {
+router.post('', ensureAuthenticated, (req, res) => {
     // Since in HTML form we are using post method
     console.log(req.body);
 
@@ -74,7 +75,7 @@ router.post('', (req, res) => {
 });
 
 // Edit idea and update DB
-router.put('/:id', (req, res) => {
+router.put('/:id', ensureAuthenticated, (req, res) => {
     Idea.findOne({
         _id: req.params.id
     })
@@ -92,7 +93,7 @@ router.put('/:id', (req, res) => {
 });
 
 // Delete Idea
-router.delete('/:id', (req, res) => {
+router.delete('/:id', ensureAuthenticated, (req, res) => {
     Idea.deleteOne({ _id: req.params.id })
         .then(() => {
             console.log('Deleted entry');

@@ -1,44 +1,65 @@
 <!-- The underscore in a filename tells that this is a partial -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+            IdeasCRUD
+        </a>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">IdeasCRUD</a>
-
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            {{#if user}}
-            <li class="nav-item dropdown">
-                <a href="#" id="navbarDropdownMenuLink" class="nav-link dropdown-toggle" data-toggle="dropdown">My
-                    Ideas</a>
-                <div class="dropdown-menu">
-                    <a href="/ideas" class="dropdown-item">View ideas</a>
-                    <a href="/ideas/add" class="dropdown-item">Add idea</a>
-                </div>
-
-            </li>
-            
-            <li class="nav-item">
-            <a href="/users/logout" class="nav-link btn btn-danger" style="color: whitesmoke;">Logout</a>
-            </li>
-            {{else}}
-            <li class="nav-item">
-                <a href="/users/login" class="nav-link">Login</a>
-            </li>
-            <li class="nav-item">
-                <a href="/users/signup" class="nav-link">Sign-up</a>
-            </li>
-            {{/if}}
-        </ul>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
     </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a href="/" class="navbar-item">
+                Home
+            </a>
+
+            <a href="/about" class="navbar-item">
+                About
+            </a>
+
+            {{#if user}}
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    More
+                </a>
+
+                <div class="navbar-dropdown">
+                    <a href="/ideas" class="navbar-item">
+                        View Ideas
+                    </a>
+                    <a href="/ideas/add" class="navbar-item">
+                        Add Idea
+                    </a>
+                    <hr class="navbar-divider">
+                    <a class="navbar-item">
+                        Report an issue
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a href="/users/logout" class="button is-danger">
+                        <strong>Sign up</strong>
+                    </a>
+                    {{else}}
+                    <a href="/users/signup" class="button is-primary">
+                        <strong>Sign up</strong>
+                    </a>
+                    <a href="/users/login" class="button is-light">
+                        Log in
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
 </nav>

@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const {ensureAuthenticated} = require('../helpers/auth'); // Using destructuring;
+const { ensureAuthenticated } = require('../helpers/auth'); // Using destructuring;
 
 const router = express.Router();
 
@@ -10,7 +10,7 @@ const Idea = mongoose.model('ideas');
 
 // Ideas index route 
 router.get('/', ensureAuthenticated, (req, res) => {
-    Idea.find({})
+    Idea.find({ user: req.user.id })
         .sort({
             date: 'desc'
         })
@@ -28,9 +28,14 @@ router.get('/edit/:id', ensureAuthenticated, (req, res) => {
         _id: req.params.id
     })
         .then(idea => {
-            res.render('ideas/edit', {
-                idea: idea
-            })
+            if (idea.user != req.user.id) {
+                req.flash('error_msg', 'Not Authorized');
+                res.redirect('/ideas');
+            } else {
+                res.render('ideas/edit', {
+                    idea: idea
+                });
+            }
         })
 })
 
@@ -40,7 +45,7 @@ router.get('/add', ensureAuthenticated, (req, res) => {
 })
 
 // Process form
-router.post('', ensureAuthenticated, (req, res) => {
+router.post('/', ensureAuthenticated, (req, res) => {
     // Since in HTML form we are using post method
     console.log(req.body);
 
@@ -63,7 +68,8 @@ router.post('', ensureAuthenticated, (req, res) => {
     } else {
         const newUser = {
             title: req.body.title,
-            details: req.body.details
+            details: req.body.details,
+            user: req.body.id
         }
         new Idea(newUser)
             .save()

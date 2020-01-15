@@ -9,7 +9,7 @@ require('../models/Idea');
 const Idea = mongoose.model('ideas');
 
 // Ideas index route 
-router.get('/', ensureAuthenticated, (req, res) => {
+router.get('/', ensureAuthenticated, (req, res) => {    
     Idea.find({ user: req.user.id })
         .sort({
             date: 'desc'
@@ -18,7 +18,7 @@ router.get('/', ensureAuthenticated, (req, res) => {
             res.render('ideas/index', {
                 ideas: ideas
             });
-        })
+        });
 })
 
 // Get ideas for edit
@@ -69,7 +69,7 @@ router.post('/', ensureAuthenticated, (req, res) => {
         const newUser = {
             title: req.body.title,
             details: req.body.details,
-            user: req.body.id
+            user: req.user.id
         }
         new Idea(newUser)
             .save()

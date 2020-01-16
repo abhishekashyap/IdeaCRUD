@@ -1,0 +1,32 @@
+#bulb {
+    position: absolute;
+    z-index: 2;
+    top: 134px;
+    left: 162px;
+    fill: #FFF35C;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+#glow {
+    position: absolute;
+    width: 76px;
+    height: 76px;
+    background: #FFF35C;
+    border-radius: 50px;
+    box-shadow: 0 0 50px 10px #FFF35C;
+    top: 134px;
+    left: 162px;
+    transition: all .5s ease-in-out;
+}
+
+#bulb:hover~#glow {
+    opacity: 0;
+}
+
+#base {
+    position: absolute;
+    top: 233px;
+    left: 184px;
+    fill: #E5E5E5;
+}

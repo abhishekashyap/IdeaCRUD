@@ -1,29 +1,52 @@
 <div class="row">
     <div class="col-md-6 mx-auto">
         <div class="card card-body">
-            <h3 class="text-center">Sign Up</h3>
             <form action="/users/signup" method="POST">
-                <div class="form-control mb-2">
-                    <label for="name">
-                        Name
-                    </label>
-                    <input type="text" name="name" class="form-control" value="{{name}}">
+                <div class="field">
+                    <label class="label" for="name">Name</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input name="name" class="input is-success" type="text" placeholder="Name"
+                            value="{{name}}">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span>
+                    </div>
+                    <p class="help is-success">This username is available</p>
                 </div>
-                <div class="form-control mb-2">
-                    <label for="email">
+                <div class="field">
+                    <label class="label" for="email">
                         Email
-                    </label>
-                    <input type="email" name="email" class="form-control" value="{{email}}">
+                    </label class="label">
+                    <div class="control has-icons-left">
+                        <input class="input" name="email" type="email" placeholder="Email" value="{{email}}">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </div>
                 </div>
-                <div class="form-control mb-2">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control">
+                <div class="field">
+                    <label class="label" for="password">Password</label class="label">
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" name="password" placeholder="Password">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
                 </div>
-                <div class="form-control mb-2">
-                    <label for="password2">Confirm password</label>
-                    <input type="password" name="password2" class="form-control">
+                <div class="field">
+                    <label class="label" for="password2">Confirm password</label class="label">
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" name="password2" placeholder="Confirm password">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
                 </div>
-                <button type="submit" class="btn btn-primary" class="form-control">Sign-up</button>
+
+                <button type="submit" class="button is-link" class="input">Sign-up</button>
             </form>
         </div>
     </div>

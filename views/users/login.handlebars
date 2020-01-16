@@ -1,20 +1,28 @@
-<div class="row">
-    <div class="col-md-6 mx-auto">
-        <div class="card card-body">
-            <h3 class="text-center">Login</h3>
-            <form action="/users/login" method="POST">
-                <div class="form-control mb-2">
-                    <label for="email">
-                        Email
-                    </label>
-                    <input type="email" name="email" class="form-control">
-                </div>
-                <div class="form-control mb-2">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-primary">Sign-in</button>
-            </form>
+<div class="card card-body">
+    <form action="/users/login" method="POST">
+        <div class="field">
+            <label for="title">
+                <h3 class="subtitle is-3">Log-in</h3>
+            </label>
         </div>
-    </div>
+        <div class="field">
+            <div class="control has-icons-left">
+                <input class="input" name="email" type="email" placeholder="Email">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                </span>
+            </div>
+        </div>
+        <div class="field">
+            <p class="control has-icons-left">
+                <input class="input" type="password" name="password" placeholder="Password">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                </span>
+            </p>
+        </div>
+        <div class="control">
+            <button type="submit" class="button is-success">Sign-in</button>
+        </div>
+    </form>
 </div>

@@ -8,10 +8,10 @@ body {
 
 .left-section {
     background-color: $red;
-    // min-height: 90vh;
-    background-color: white;
-    border-radius: 2vw;
-    margin: 1%;
+    margin: 2vw;
+    background-color: $blue;
+    height: 100%;
+//    width: 5% !important;
 }
 
 .main-section {
@@ -20,6 +20,7 @@ body {
     padding: 3vw;
     // min-height: 90vh;
     margin: 1%;
+    height: 100%;
 }
 
 .right-section {

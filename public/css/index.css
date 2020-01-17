@@ -6,9 +6,9 @@ body {
 
 .left-section {
   background-color: #f14668;
-  background-color: white;
-  border-radius: 2vw;
-  margin: 1%;
+  margin: 2vw;
+  background-color: #3273dc;
+  height: 100%;
 }
 
 .main-section {
@@ -16,6 +16,7 @@ body {
   background-color: white;
   padding: 3vw;
   margin: 1%;
+  height: 100%;
 }
 
 .right-section {

@@ -1,0 +1,34 @@
+.left-section-container {
+  border-radius: 2vw;
+  background-color: white;
+  min-height: 90vh;
+  padding: 1vw;
+}
+
+.left-section {
+  background-color: #f14668;
+}
+
+.main-section-container {
+  border-radius: 2vw;
+  background-color: white;
+  padding: 3vw;
+  min-height: 90vh;
+}
+
+.main-section {
+  background-color: #f14668;
+}
+
+.right-section-container {
+  border-radius: 2vw;
+  background-color: white;
+  padding: 2vw;
+  min-height: 90vh;
+}
+
+.right-section {
+  background-color: #f14668;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,34 +1,31 @@
 @import 'utilities/initial-variables.sass';
 
-.left-section-container {
-    border-radius: 2vw;
-    background-color: white;
-    min-height: 90vh;
-    padding: 1vw;
+body {
+    background-color: $red;
+    height: 100vh;
+    width: 100vw;
 }
 
 .left-section {
     background-color: $red;
-}
-
-.main-section-container {
-    border-radius: 2vw;
+    // min-height: 90vh;
     background-color: white;
-    padding: 3vw;
-    min-height: 90vh;
+    border-radius: 2vw;
+    margin: 1%;
 }
 
 .main-section {
-    background-color: $red;
-}
-
-.right-section-container {
     border-radius: 2vw;
     background-color: white;
-    padding: 2vw;
-    min-height: 90vh;
+    padding: 3vw;
+    // min-height: 90vh;
+    margin: 1%;
 }
 
 .right-section {
     background-color: $red;
+    // min-height: 90vh;
+    background-color: white;
+    border-radius: 2vw;
+    margin: 1%;
 }

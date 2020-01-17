@@ -1,34 +1,28 @@
-.left-section-container {
-  border-radius: 2vw;
-  background-color: white;
-  min-height: 90vh;
-  padding: 1vw;
+body {
+  background-color: #f14668;
+  height: 100vh;
+  width: 100vw;
 }
 
 .left-section {
   background-color: #f14668;
-}
-
-.main-section-container {
-  border-radius: 2vw;
   background-color: white;
-  padding: 3vw;
-  min-height: 90vh;
+  border-radius: 2vw;
+  margin: 1%;
 }
 
 .main-section {
-  background-color: #f14668;
-}
-
-.right-section-container {
   border-radius: 2vw;
   background-color: white;
-  padding: 2vw;
-  min-height: 90vh;
+  padding: 3vw;
+  margin: 1%;
 }
 
 .right-section {
   background-color: #f14668;
+  background-color: white;
+  border-radius: 2vw;
+  margin: 1%;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -6,12 +6,11 @@
     min-height: 100vh;
 }
 
-.page-main {
-    flex-grow: 1;
+.row-header {
+    background-color: #e74c3c;
 }
 
-@media screen and (min-width: 768px) {
-    .page-main {
-        padding-left: 90px;
-    }
+.row-main {
+    background-color: #3498db;
+    flex: 1;
 }

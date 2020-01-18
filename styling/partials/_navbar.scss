@@ -1,24 +1,25 @@
-.navbar nav {
+.navbar {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
 }
 
-.navbar ul {
-    display: flex;
-    order: 1;
-    width: 100%;
-    // margin-top: 
+.brand {
+    flex: 1;
+    background-color: #34495e;
 }
 
-@media screen and (min-width: 550px) {
-    .navbar ul {
-        width: auto;
-        margin-top: 0;
-    }
+.nav {
+    
+    flex: 4;
+}
 
-    .login {
-        order: 1;
-    }
+.nav a {
+    text-decoration: none;
+}
+
+.login {
+    background-color: #f1c40f;
+    // padding: 1% 5% 1% 5%;
+    flex: 1;
+    margin-right: auto;
 }

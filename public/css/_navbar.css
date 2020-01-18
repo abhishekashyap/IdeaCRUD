@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand {
+  flex: 1;
+  background-color: #34495e;
+}
+
+.nav {
+  flex: 4;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.login {
+  background-color: #f1c40f;
+  flex: 1;
+  margin-right: auto;
+}
+
+/*# sourceMappingURL=_navbar.css.map */

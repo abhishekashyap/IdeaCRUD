@@ -1,21 +1,15 @@
 .nav-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 5fr 2fr 3fr;
+  grid-template-rows: 1fr 8fr 1fr;
+}
+
+.nav-brand {
+  grid-column: 1/2;
 }
 
 .nav-items-list {
-  list-style: none;
-}
-
-.nav-items {
-  display: inline-flex;
-}
-
-.brand {
-  margin-right: auto;
-}
-
-.login-items {
-  margin-left: auto;
+  grid-column: span 2;
 }
 
 /*# sourceMappingURL=index.css.map */

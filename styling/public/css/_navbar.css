@@ -1,0 +1,25 @@
+.navbar nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  order: 1;
+  width: 100%;
+}
+
+@media screen and (min-width: 550px) {
+  .navbar ul {
+    width: auto;
+    margin-top: 0;
+  }
+
+  .login {
+    order: 1;
+  }
+}
+
+/*# sourceMappingURL=_navbar.css.map */

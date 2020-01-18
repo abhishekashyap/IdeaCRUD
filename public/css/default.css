@@ -1,5 +1,21 @@
+@font-face {
+    font-family: "myfont";
+    src: url("../fonts/CircularStd-Book.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: 'Gilroy-Light';
+    src: url('../fonts/');
+    src: url('../fonts/?#iefix') format('embedded-opentype'), url('../fonts/gilroy/3ADD9E_0_0.woff2') format('woff2'), url('../fonts/gilroy/3ADD9E_0_0.woff') format('woff'), url('../fonts/gilroy/3ADD9E_0_0.ttf') format('truetype');
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body {
+    /* font-family: CircularStd-Book, serif; */
+    font-family: Gilroy-Light, serif;
 }

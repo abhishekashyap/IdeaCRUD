@@ -9,12 +9,20 @@
 }
 
 .nav {
-    
     flex: 4;
 }
 
 .nav a {
     text-decoration: none;
+    color: #95a5a6;
+    font-size: xx-large;
+}
+
+.nav a:hover {
+    transition: ease 0.3s;
+    text-decoration: none;
+    color: black;
+    font-size: xx-large;
 }
 
 .login {

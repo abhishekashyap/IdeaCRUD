@@ -17,9 +17,20 @@
     margin: 1vw;
     padding: 2vw;
     border-radius: 50px;
-    // box-shadow: 5px 5px 4px #c3c3c3;
+    // box-shadow: 5px 5px 4px å#c3c3c3;
 }
 .right-section {
-    background-color: #e67e22;
+    display: flex;
+    flex-direction: column;
+    font-size: xx-large;
+    padding: 2vw;
+    // background-color: #e67e22;
     flex: 1;
+}
+
+.avatar {
+    display: flex;
+    justify-self: center;
+    height: 100px;
+    width: 100px;
 }

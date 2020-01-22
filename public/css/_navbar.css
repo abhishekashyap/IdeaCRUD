@@ -25,10 +25,19 @@
   font-size: xx-large;
 }
 
-.login {
-  background-color: #f1c40f;
+.login-btns {
+  background-color: #2ecc71;
   flex: 1;
-  margin-right: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.signup-btn {
+  background-color: #9b59b6;
+}
+
+.login-btn {
+  background-color: #f1c40f;
 }
 
 /*# sourceMappingURL=_navbar.css.map */

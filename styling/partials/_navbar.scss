@@ -25,9 +25,22 @@
     font-size: xx-large;
 }
 
-.login {
-    background-color: #f1c40f;
+.login-btns {
+    background-color: #2ecc71;
     // padding: 1% 5% 1% 5%;
+    // padding: 1%;
     flex: 1;
-    margin-right: auto;
+    display: flex;
+    justify-content: flex-end;
+    // justify-content: space-around;
+}
+
+.signup-btn {
+    background-color: #9b59b6;
+    // margin: 5%;
+}
+
+.login-btn {
+    background-color: #f1c40f;
+    // margin: 5%;
 }

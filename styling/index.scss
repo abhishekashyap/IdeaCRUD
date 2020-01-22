@@ -1,0 +1,25 @@
+.index {
+    display: flex;
+    align-items: stretch;    
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    // background-color: #34495e;
+    width: 5vw;
+    align-items: center;
+}
+
+.main-section {
+    background-color: rgb(245, 247, 250);
+    flex-basis: 80vw;
+    margin: 1vw;
+    padding: 2vw;
+    border-radius: 50px;
+    // box-shadow: 5px 5px 4px #c3c3c3;
+}
+.right-section {
+    background-color: #e67e22;
+    flex: 1;
+}

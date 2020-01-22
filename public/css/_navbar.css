@@ -1,21 +1,28 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
+  height: 3vw;
 }
 
 .brand {
-  flex: 1;
-  background-color: #34495e;
+  display: flex;
+  flex-basis: 5vw;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav {
-  flex: 4;
+  display: flex;
+  align-items: center;
+  flex-basis: 80vw;
 }
 
 .nav a {
+  padding-left: 1.5vw;
   text-decoration: none;
   color: #95a5a6;
   font-size: xx-large;
+  font-weight: bolder;
+  font-family: CircularStd, serif;
 }
 
 .nav a:hover {
@@ -26,7 +33,6 @@
 }
 
 .login-btns {
-  background-color: #2ecc71;
   flex: 1;
   display: flex;
   justify-content: flex-end;

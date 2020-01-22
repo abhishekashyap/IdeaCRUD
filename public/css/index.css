@@ -1,15 +1,26 @@
-.nav-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr 5fr 2fr 3fr;
-  grid-template-rows: 1fr 8fr 1fr;
+.index {
+  display: flex;
+  align-items: stretch;
 }
 
-.nav-brand {
-  grid-column: 1/2;
+.left-section {
+  display: flex;
+  flex-direction: column;
+  width: 5vw;
+  align-items: center;
 }
 
-.nav-items-list {
-  grid-column: span 2;
+.main-section {
+  background-color: #f5f7fa;
+  flex-basis: 80vw;
+  margin: 1vw;
+  padding: 2vw;
+  border-radius: 50px;
+}
+
+.right-section {
+  background-color: #e67e22;
+  flex: 1;
 }
 
 /*# sourceMappingURL=index.css.map */

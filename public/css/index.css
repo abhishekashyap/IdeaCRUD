@@ -1,6 +1,7 @@
 .index {
   display: flex;
-  align-items: stretch;
+  flex-wrap: wrap;
+  height: 93vh;
 }
 
 .left-section {
@@ -11,8 +12,10 @@
 }
 
 .main-section {
+  display: flex;
+  flex-direction: column;
   background-color: #f5f7fa;
-  flex-basis: 80vw;
+  flex-basis: 75vw;
   margin: 1vw;
   padding: 2vw;
   border-radius: 50px;

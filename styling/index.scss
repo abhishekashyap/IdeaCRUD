@@ -1,6 +1,7 @@
 .index {
     display: flex;
-    align-items: stretch;    
+    flex-wrap: wrap;
+    height: 93vh;
 }
 
 .left-section {
@@ -12,8 +13,10 @@
 }
 
 .main-section {
+    display: flex;
+    flex-direction: column;
     background-color: rgb(245, 247, 250);
-    flex-basis: 80vw;
+    flex-basis: 75vw;
     margin: 1vw;
     padding: 2vw;
     border-radius: 50px;
@@ -24,12 +27,14 @@
     flex-direction: column;
     font-size: xx-large;
     padding: 2vw;
+    // justify-content: space-around;
     // background-color: #e67e22;
     flex: 1;
 }
 
 .avatar {
     display: flex;
+    // flex-wrap: wrap-reverse;
     justify-self: center;
     height: 100px;
     width: 100px;

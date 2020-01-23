@@ -3,14 +3,28 @@
     <div class="brand">
         <h2 class="logo">LOGO</h2>
     </div>
+    {{#if user}}
     <div class="nav">
-        <a href="">Add Idea</a>
-        <a href="">Create Idea</a>
+        <a href="/ideas">View Ideas</a>
+        <a href="/ideas/add">Add Idea</a>
+        <a href="/users/logout">Logout</a>
     </div>
-    <div class="login-btns">
-        <button class="signup-btn">Sign-up</button>
-        <button class="login-btn">Login</button>
+    {{else}}
+    <div class="nav-btns">
+        <button class="login-btns signup-btn">
+            <a href="/users/signup" class="button is-primary">
+                <strong>
+                    Sign up
+                </strong>
+            </a>
+        </button>
+        <button class="login-btns login-btn">
+            <a href="/users/login" class="button is-light">
+                Log in
+            </a>
+        </button>
     </div>
+    {{/if}}
 </nav>
 {{!-- 
 <nav class="navbar is-danger" role="navigation" aria-label="main navigation">

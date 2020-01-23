@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  height: 3vw;
+  height: 7vh;
 }
 
 .brand {
@@ -32,10 +32,19 @@
   font-size: xx-large;
 }
 
-.login-btns {
+.nav-btns {
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  margin-right: 5vw;
+}
+
+.login-btns {
+  width: 8vw;
+  height: 1.8vw;
+  margin: 0.5vw;
+  border-radius: 50px;
 }
 
 .signup-btn {

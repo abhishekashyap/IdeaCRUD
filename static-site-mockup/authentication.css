@@ -1,0 +1,40 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("./backgrounds/pawel-czerwinski-hNrd99q5peI-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main-card {
+    width: 60%;
+    height: 70%;
+    background-color: #e74c3c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card {
+    flex: 1;
+    padding: 5%;
+}
+
+.card-left {
+    background-color: #f1c40f;
+}
+
+.card-right {
+    background-color: #1abc9c;
+}
+
+.illustration {
+    width: 30%;
+}
